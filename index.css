@@ -1,0 +1,7 @@
+div.hours,
+div.minutes,
+div.seconds,
+div.ampm {
+    display: inline-block;
+    margin-right: 2px;
+}
