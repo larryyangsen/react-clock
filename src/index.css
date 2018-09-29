@@ -1,7 +1,9 @@
 div.hours,
 div.minutes,
 div.seconds,
-div.ampm {
+div.ampm,
+div.year,
+div.month,
+div.date {
     display: inline-block;
-    margin-right: 2px;
 }
