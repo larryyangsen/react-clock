@@ -1,4 +1,4 @@
-# A practice with react new context api
+# A practice with react new context api and useContext hook
 
 -   npm install -g parcel-bundler
 -   npm install
