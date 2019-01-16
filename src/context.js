@@ -6,15 +6,18 @@ export const timeContext = React.createContext();
 const { Provider } = timeContext;
 export class TimerProvider extends Component {
     state = {};
+
     setTime = () => {
         const time = getTime();
         return this.setState({ ...time });
     };
-    constructor(props) {
-        super(props);
-    }
+
     componentDidMount() {
-        setInterval(() => this.setTime(), 100);
+        this.setTime();
+        this.timeIntervalID = setInterval(() => this.setTime(), 100);
+    }
+    componentWillUnmount() {
+        clearInterval(this.timeIntervalID);
     }
     render() {
         return (

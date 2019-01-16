@@ -12,7 +12,7 @@ const timer = () => {
     const Ms = () => <div className="seconds">.{time.ms}</div>;
     const AMPM = () => <div className="ampm">{time.ampm}:</div>;
     return (
-        <div>
+        <>
             <div>
                 <Year />
                 <Month />
@@ -25,7 +25,7 @@ const timer = () => {
                 <Seconds />
                 <Ms />
             </div>
-        </div>
+        </>
     );
 };
 
