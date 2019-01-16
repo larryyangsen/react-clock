@@ -1,10 +1,22 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import getTime from './getTime';
 
 export const timeContext = React.createContext();
 
 const { Provider } = timeContext;
-export class TimerProvider extends Component {
+
+export const TimerProviderFunction = ({ children }) => {
+    const [time, setTime] = useState(getTime());
+    useEffect(() => {
+        const timeIntervalID = setInterval(() => setTime(getTime()), 100);
+        return () => {
+            clearInterval(timeIntervalID);
+        };
+    }, []); // [] run only one time
+
+    return <Provider value={{ ...time }}>{children}</Provider>;
+};
+export class TimerProviderClass extends Component {
     state = {};
 
     setTime = () => {
